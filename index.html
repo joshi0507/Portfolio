@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tanishq Joshi - BCA Data Science Student | WordPress Developer | Generative AI | Power BI" />
+  <meta name="keywords" content="Tanishq Joshi, Portfolio, WordPress, AI, Power BI, Web Developer" />
+  <title>Tanishq Joshi | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-logo">TJ</div>
+      <div class="preloader-bar"><div class="preloader-fill" id="preloaderFill"></div></div>
+      <p class="preloader-text">Initializing Experience...</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-box">TJ</span>
+        <span class="logo-text">Tanishq Joshi</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#certifications" class="nav-link" data-section="certifications">Certs</a></li>
+        <li><a href="#contact" class="nav-link nav-cta" data-section="contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <ul class="mobile-links">
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#experience" class="mobile-link">Experience</a></li>
+      <li><a href="#certifications" class="mobile-link">Certifications</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for Opportunities
+      </div>
+
+      <div class="hero-photo-wrapper">
+        <div class="photo-ring photo-ring-1"></div>
+        <div class="photo-ring photo-ring-2"></div>
+        <div class="photo-ring photo-ring-3"></div>
+        <div class="photo-container">
+          <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/my-img-1772701896900.jpeg?width=8000&height=8000&resize=contain" alt="Tanishq Joshi" class="hero-photo" />
+        </div>
+        <div class="photo-glow"></div>
+      </div>
+
+      <h1 class="hero-name">
+        <span class="name-line" data-text="Tanishq">Tanishq</span>
+        <span class="name-line accent" data-text="Joshi">Joshi</span>
+      </h1>
+
+      <div class="hero-roles">
+        <span class="role-static">I am a </span>
+        <span class="role-dynamic" id="roleText"></span>
+        <span class="role-cursor">|</span>
+      </div>
+
+      <p class="hero-description">
+        BCA (Data Science) student crafting immersive digital experiences through WordPress, AI, and modern web technologies. Turning ideas into impactful solutions.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Live Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Internships</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <span class="stat-num" data-count="6">0</span>
+          <span class="stat-label">Skills</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          <span>View Projects</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <span>Hire Me</span>
+          <i class="fas fa-paper-plane"></i>
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/tanishq-joshi-9921b3285/" target="_blank" class="social-icon" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://github.com/joshi0507/" target="_blank" class="social-icon" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.credly.com/users/tanishq-joshi16/badges#credly" target="_blank" class="social-icon" aria-label="Credly">
+          <i class="fas fa-certificate"></i>
+        </a>
+        <a href="mailto:tanishqjoshi200507@gmail.com" class="social-icon" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </a>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who <span class="highlight">I Am</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-left" data-aos="fade-right">
+          <div class="about-card-3d" id="aboutCard">
+            <div class="about-card-inner">
+              <div class="about-img-container">
+                <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/my-img-1772701896900.jpeg?width=8000&height=8000&resize=contain" alt="Tanishq Joshi" class="about-img" />
+                <div class="about-img-overlay"></div>
+              </div>
+              <div class="about-card-badge">
+                <i class="fas fa-graduation-cap"></i>
+                BCA Data Science
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right" data-aos="fade-left">
+          <h3 class="about-heading">Motivated Developer & <span class="highlight">Data Enthusiast</span></h3>
+          <p class="about-text">
+            I am a motivated and detail-oriented BCA (Data Science) student from Career Point University, Kota, Rajasthan. With hands-on experience in WordPress Web Development, Generative AI, SEO, Vibe Coding, and Power BI, I build responsive, optimized, and data-driven solutions.
+          </p>
+          <p class="about-text">
+            Actively seeking opportunities in WordPress Development, Business Intelligence, or modern web development where I can contribute innovative solutions and grow through real-world experience.
+          </p>
+
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Kota, Rajasthan</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 9257424939</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>tanishqjoshi200507@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-university"></i>
+              <span>Career Point University</span>
+            </div>
+          </div>
+
+          <a href="#contact" class="btn-primary about-btn">
+            <span>Let's Connect</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section class="section skills-section" id="skills">
+    <div class="skills-bg-shape"></div>
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Technical Arsenal</span>
+        <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+      </div>
+
+      <div class="skills-grid" data-aos="fade-up">
+        <div class="skill-card" data-tilt>
+          <div class="skill-icon-wrap" style="--clr:#2EF2E2">
+            <i class="fab fa-wordpress"></i>
+          </div>
+          <h4>WordPress Development</h4>
+          <p>WooCommerce, Elementor, Custom PHP/CSS, Yoast SEO</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="90" style="--clr:#2EF2E2"></div>
+          </div>
+          <span class="skill-percent">90%</span>
+        </div>
+
+        <div class="skill-card" data-tilt>
+          <div class="skill-icon-wrap" style="--clr:#ACC8A2">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h4>Generative AI</h4>
+          <p>AI-powered solutions, IBM Cloud AI, Prompt Engineering</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85" style="--clr:#ACC8A2"></div>
+          </div>
+          <span class="skill-percent">85%</span>
+        </div>
+
+        <div class="skill-card" data-tilt>
+          <div class="skill-icon-wrap" style="--clr:#2EF2E2">
+            <i class="fas fa-code"></i>
+          </div>
+          <h4>Vibe Coding</h4>
+          <p>React, Tailwind CSS, Modern web architectures</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="80" style="--clr:#2EF2E2"></div>
+          </div>
+          <span class="skill-percent">80%</span>
+        </div>
+
+        <div class="skill-card" data-tilt>
+          <div class="skill-icon-wrap" style="--clr:#ACC8A2">
+            <i class="fas fa-search"></i>
+          </div>
+          <h4>SEO</h4>
+          <p>On-page SEO, Google Search Console, Keyword Research</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="88" style="--clr:#ACC8A2"></div>
+          </div>
+          <span class="skill-percent">88%</span>
+        </div>
+
+        <div class="skill-card" data-tilt>
+          <div class="skill-icon-wrap" style="--clr:#2EF2E2">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h4>Power BI</h4>
+          <p>Dashboards, Real-time data analysis, Business Intelligence</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="82" style="--clr:#2EF2E2"></div>
+          </div>
+          <span class="skill-percent">82%</span>
+        </div>
+
+        <div class="skill-card" data-tilt>
+          <div class="skill-icon-wrap" style="--clr:#ACC8A2">
+            <i class="fas fa-file-excel"></i>
+          </div>
+          <h4>MS Office</h4>
+          <p>Excel, Word, PowerPoint — Data management & reporting</p>
+          <div class="skill-bar">
+            <div class="skill-fill" data-width="85" style="--clr:#ACC8A2"></div>
+          </div>
+          <span class="skill-percent">85%</span>
+        </div>
+      </div>
+
+      <!-- Tech Tags -->
+      <div class="tech-tags" data-aos="fade-up">
+        <span class="tech-tag">HTML5</span>
+        <span class="tech-tag">CSS3</span>
+        <span class="tech-tag">JavaScript</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">Tailwind CSS</span>
+        <span class="tech-tag">PHP</span>
+        <span class="tech-tag">WooCommerce</span>
+        <span class="tech-tag">Elementor</span>
+        <span class="tech-tag">Yoast SEO</span>
+        <span class="tech-tag">IBM Cloud</span>
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Google Analytics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card-inner">
+            <div class="project-mockup">
+              <div class="mockup-browser">
+                <div class="mockup-bar">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <div class="mockup-url">evermademasale.in</div>
+                </div>
+                <div class="mockup-screen" style="background: linear-gradient(135deg, #1A2238, #2F2F33)">
+                  <div class="mockup-content">
+                    <i class="fas fa-shopping-cart mockup-icon" style="color:#2EF2E2"></i>
+                    <span>eCommerce Store</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-period">Jan – Feb 2026</div>
+              <h3 class="project-title">Evermademasale.in</h3>
+              <p class="project-desc">
+                Full-featured eCommerce website built with WordPress and WooCommerce. Integrated Razorpay payment gateway, Elementor-based responsive design with custom CSS/PHP, and Yoast SEO optimization.
+              </p>
+              <div class="project-tags">
+                <span class="ptag">WordPress</span>
+                <span class="ptag">WooCommerce</span>
+                <span class="ptag">Razorpay</span>
+                <span class="ptag">Elementor</span>
+                <span class="ptag">Yoast SEO</span>
+              </div>
+              <div class="project-links">
+                <a href="https://evermademasale.in" target="_blank" class="plink">
+                  <i class="fas fa-external-link-alt"></i> Live Site
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-card-inner">
+            <div class="project-mockup">
+              <div class="mockup-browser">
+                <div class="mockup-bar">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <div class="mockup-url">webinosolutions.com</div>
+                </div>
+                <div class="mockup-screen" style="background: linear-gradient(135deg, #1A2517, #1A2238)">
+                  <div class="mockup-content">
+                    <i class="fas fa-briefcase mockup-icon" style="color:#ACC8A2"></i>
+                    <span>Service Platform</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-period">Dec 2025 – Jan 2026</div>
+              <h3 class="project-title">Webinosolutions.com</h3>
+              <p class="project-desc">
+                Modern service provider website developed with vibe coding techniques. Features beautiful UI with smooth scrolling effects, on-page SEO with high-demand keywords, and Google Search Console integration.
+              </p>
+              <div class="project-tags">
+                <span class="ptag">Vibe Coding</span>
+                <span class="ptag">On-page SEO</span>
+                <span class="ptag">GSC</span>
+                <span class="ptag">Smooth Scroll</span>
+              </div>
+              <div class="project-links">
+                <a href="https://webinosolutions.com" target="_blank" class="plink">
+                  <i class="fas fa-external-link-alt"></i> Live Site
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 - Portfolio -->
+        <div class="project-card project-card-featured" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-card-inner">
+            <div class="project-mockup">
+              <div class="mockup-browser">
+                <div class="mockup-bar">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                  <div class="mockup-url">tanishqjoshi.dev</div>
+                </div>
+                <div class="mockup-screen" style="background: linear-gradient(135deg, #2F2F33, #1A2238)">
+                  <div class="mockup-content">
+                    <i class="fas fa-user-astronaut mockup-icon" style="color:#2EF2E2"></i>
+                    <span>3D Portfolio</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-period">2026</div>
+              <h3 class="project-title">Personal Portfolio</h3>
+              <p class="project-desc">
+                Immersive 3D portfolio website with particle animations, smooth scrolling, tilt effects, typewriter animations, and a contact form with API integration. Built with pure HTML5, CSS3, and JavaScript.
+              </p>
+              <div class="project-tags">
+                <span class="ptag">HTML5</span>
+                <span class="ptag">CSS3</span>
+                <span class="ptag">JavaScript</span>
+                <span class="ptag">3D Effects</span>
+                <span class="ptag">API</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="plink">
+                  <i class="fas fa-eye"></i> You're Here!
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="featured-badge">Featured</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section class="section experience-section" id="experience">
+    <div class="exp-bg-shape"></div>
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Journey</span>
+        <h2 class="section-title">Experience & <span class="highlight">Education</span></h2>
+      </div>
+
+      <div class="timeline">
+        <!-- IBM -->
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot" style="--clr:#2EF2E2">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-type internship">Internship</span>
+                <h3>IBM SkillsBuild, AICTE</h3>
+              </div>
+              <span class="timeline-date">Jul – Aug 2025</span>
+            </div>
+            <p class="timeline-role">IBM Cloud Platform – Emerging Technology (AI & Cloud)</p>
+            <p class="timeline-desc">Hands-on training on IBM Cloud platform covering Artificial Intelligence and Cloud Computing fundamentals through the AICTE-IBM SkillsBuild program.</p>
+            <div class="timeline-tags">
+              <span>IBM Cloud</span><span>AI</span><span>Cloud Computing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grass Solutions -->
+        <div class="timeline-item timeline-item-right" data-aos="fade-left">
+          <div class="timeline-dot" style="--clr:#ACC8A2">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-type internship">Internship</span>
+                <h3>Grass Solutions</h3>
+              </div>
+              <span class="timeline-date">Jun – Jul 2024</span>
+            </div>
+            <p class="timeline-role">Frontend Developer Intern</p>
+            <p class="timeline-desc">Developed responsive websites using React and Tailwind CSS, building scalable UI components and modern user interfaces.</p>
+            <div class="timeline-tags">
+              <span>React</span><span>Tailwind CSS</span><span>Frontend</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot" style="--clr:#2EF2E2">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-type education">Education</span>
+                <h3>Career Point University</h3>
+              </div>
+              <span class="timeline-date">2023 – Present</span>
+            </div>
+            <p class="timeline-role">Bachelor of Computer Application (Data Science)</p>
+            <p class="timeline-desc">Currently pursuing BCA with specialization in Data Science from Career Point University, Kota, Rajasthan. Gaining expertise in data analysis, web development, and AI technologies.</p>
+            <div class="timeline-tags">
+              <span>BCA</span><span>Data Science</span><span>Kota, Rajasthan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CERTIFICATIONS ==================== -->
+  <section class="section cert-section" id="certifications">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Achievements</span>
+        <h2 class="section-title">Certifications & <span class="highlight">Badges</span></h2>
+      </div>
+
+      <div class="cert-grid" data-aos="fade-up">
+        <div class="cert-card" data-tilt>
+          <div class="cert-icon" style="--clr:#2EF2E2">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h4>IBM AI & Cloud Fundamentals</h4>
+          <p>IBM SkillsBuild × AICTE</p>
+          <span class="cert-year">2025</span>
+          <a href="https://www.credly.com/users/tanishq-joshi16/badges#credly" target="_blank" class="cert-link">
+            View Badge <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <div class="cert-card" data-tilt>
+          <div class="cert-icon" style="--clr:#ACC8A2">
+            <i class="fab fa-wordpress"></i>
+          </div>
+          <h4>WordPress Web Development</h4>
+          <p>Professional Certification</p>
+          <span class="cert-year">2025</span>
+          <a href="https://www.credly.com/users/tanishq-joshi16/badges#credly" target="_blank" class="cert-link">
+            View Badge <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <div class="cert-card" data-tilt>
+          <div class="cert-icon" style="--clr:#2EF2E2">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h4>Generative AI Foundations</h4>
+          <p>IBM SkillsBuild</p>
+          <span class="cert-year">2025</span>
+          <a href="https://www.credly.com/users/tanishq-joshi16/badges#credly" target="_blank" class="cert-link">
+            View Badge <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+
+        <div class="cert-card" data-tilt>
+          <div class="cert-icon" style="--clr:#ACC8A2">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <h4>Power BI Data Analytics</h4>
+          <p>Microsoft Certified</p>
+          <span class="cert-year">2024</span>
+          <a href="https://www.credly.com/users/tanishq-joshi16/badges#credly" target="_blank" class="cert-link">
+            View Badge <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="credly-banner" data-aos="fade-up">
+        <i class="fas fa-award"></i>
+        <p>View all my verified badges and certifications on Credly</p>
+        <a href="https://www.credly.com/users/tanishq-joshi16/badges#credly" target="_blank" class="btn-primary">
+          <span>View All Badges</span>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="section contact-section" id="contact">
+    <div class="contact-bg-shape"></div>
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+        <p class="section-subtitle">Have a project in mind? Let's build something amazing together.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info" data-aos="fade-right">
+          <h3>Let's Work Together</h3>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon" style="--clr:#2EF2E2"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="ci-label">Email</span>
+                <a href="mailto:tanishqjoshi200507@gmail.com" class="ci-value">tanishqjoshi200507@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon" style="--clr:#ACC8A2"><i class="fas fa-phone"></i></div>
+              <div>
+                <span class="ci-label">Phone</span>
+                <a href="tel:+919257424939" class="ci-value">+91 9257424939</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon" style="--clr:#2EF2E2"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <span class="ci-label">Location</span>
+                <span class="ci-value">Kota, Rajasthan, India</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/in/tanishq-joshi-9921b3285/" target="_blank" class="csocial linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/joshi0507/" target="_blank" class="csocial github">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.credly.com/users/tanishq-joshi16/badges#credly" target="_blank" class="csocial credly">
+              <i class="fas fa-certificate"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper" data-aos="fade-left">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name <span>*</span></label>
+                <div class="input-wrapper">
+                  <i class="fas fa-user"></i>
+                  <input type="text" id="name" name="name" placeholder="Your Name" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address <span>*</span></label>
+                <div class="input-wrapper">
+                  <i class="fas fa-envelope"></i>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject <span>*</span></label>
+              <div class="input-wrapper">
+                <i class="fas fa-tag"></i>
+                <input type="text" id="subject" name="subject" placeholder="Project Discussion" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message <span>*</span></label>
+              <div class="input-wrapper textarea-wrapper">
+                <i class="fas fa-comment-dots"></i>
+                <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary form-submit" id="submitBtn">
+              <span id="submitText">Send Message</span>
+              <i class="fas fa-paper-plane" id="submitIcon"></i>
+              <div class="btn-ripple"></div>
+            </button>
+            <div id="formStatus" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-particles"></div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-box">TJ</span>
+          <span>Tanishq Joshi</span>
+        </div>
+        <p class="footer-tagline">Building the future, one line of code at a time.</p>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/tanishq-joshi-9921b3285/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/joshi0507/" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.credly.com/users/tanishq-joshi16/badges#credly" target="_blank"><i class="fas fa-certificate"></i></a>
+          <a href="mailto:tanishqjoshi200507@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Tanishq Joshi. Crafted with <span class="heart">&#10084;</span> in Kota, Rajasthan</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
